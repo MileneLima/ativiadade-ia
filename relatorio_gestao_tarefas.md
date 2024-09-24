@@ -118,7 +118,7 @@ Designando agente para a tarefa de prioridade {tarefa.prioridade}: {tarefa.nome}
 # Definição das tarefas
 tarefa1 = Tarefa("Lavar Pratos", prioridade=3, condicao_execucao=condicao_lavar_pratos)
 tarefa2 = Tarefa("Varrer Chão", prioridade=2, condicao_execucao=condicao_varrer_chao)
-tarefa3 = Tarefa("Regar Plantas", prioridade=3, condicao_execucao=condicao_regar_plantas)
+tarefa3 = Tarefa("Regar Plantas", prioridade=1, condicao_execucao=condicao_regar_plantas)
 
 # Lista de nomes de agentes
 nomes_agentes = ["Agente 1", "Agente 2", "Agente 3"]
