@@ -31,7 +31,18 @@ class SistemaGestao:
         self.estado = estado_inicial
         self.tempo_total = tempo_total  # Tempo total disponível para a execução das tarefas
 
+    def tempo_estimado(self):
+        return sum(tarefa.tempo_execucao for tarefa in self.tarefas if not tarefa.concluida)
+
+    def verificar_tempo(self):
+        tempo_estimado = self.tempo_estimado()
+        if self.tempo_total < tempo_estimado:
+            print(f"Alerta: O tempo total disponível ({self.tempo_total} minutos) é menor que o tempo estimado para as tarefas ({tempo_estimado} minutos).")
+        else:
+            print("O tempo total disponível é suficiente para executar todas as tarefas.")
+
     def executar(self):
+        self.verificar_tempo()  # Verifica o tempo antes de executar
         while not all(tarefa.concluida for tarefa in self.tarefas) and self.tempo_total > 0:
             for tarefa in self.tarefas:
                 for agente in self.agentes:
